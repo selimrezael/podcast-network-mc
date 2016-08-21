@@ -24,13 +24,13 @@
 
 ## User Stories
 
-  As a user, I want to **BLANK** because of **BLANK**
-    ### As a user
+  As a user, I want to **BLANK** because of **BLANK** <br>
+    **As a user** <br>
     - I want to explore podcast episodes so that I can find new podcasts.
     - I want to signup and create podcasts episodes
     - I want to listen to podcasts
 
-    ### As an authorised user
+    **As an authorised user** <br>
     - I want to sign in and out so that I can access my account.
     - I want to be able to add podcasts so that my audience can listen.
     - I want to manage my podcasts.
