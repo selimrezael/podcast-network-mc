@@ -26,11 +26,11 @@
 
   As a user, I want to **BLANK** because of **BLANK** <br>
     1. **As a user**
-        - I want to explore podcast episodes so that I can find new podcasts.
-        - I want to signup and create podcasts episodes
-        - I want to listen to podcasts
+        - I want to explore podcast episodes so that I can find new podcasts. <br>
+        - I want to signup and create podcasts episodes. <br>
+        - I want to listen to podcasts. <br>
 
-    2. **As an authorised user**
+    2. **As an Authorised user**
         - I want to sign in and out so that I can access my account.
         - I want to be able to add podcasts so that my audience can listen.
         - I want to manage my podcasts.
