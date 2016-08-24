@@ -78,4 +78,18 @@ box-shadow: 0 1px 1px 0 rgba(0,0,0,0.25);
       }
     }
   }
+  #breadcrumb {
+    padding: 1rem 0;
+    text-align: center;
+    border-bottom: 1px solid lighten($dark, 75%);
+    font-weight: 700;
+    font-size: .7rem;
+    a {
+      color: lighten($dark, 45%);
+      text-decoration: none;
+    }
+    span {
+      margin: 0 .5rem;
+    }
+  }
 }
