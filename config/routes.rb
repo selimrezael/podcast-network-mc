@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'podcasts/index'
-
-  get 'welcome/index'
+  resources :podcasts
 
   root 'welcome#index'
 
