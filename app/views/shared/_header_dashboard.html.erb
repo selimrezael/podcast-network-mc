@@ -3,9 +3,15 @@
       <%= link_to "Podcast.fm",  root_path, id: "logo" %>
       <nav>
         <ul>
-          <li><li><%= link_to "Explore", podcasts_path %></li></li>
-          <li><a href="#">Sign In</a></li>
-          <li><a href="#">Create a Podcast</a></li>
+          <li><%= link_to "Explore", podcasts_path %></li>
+          <% unless podcast_signed_in? %>
+            <li><%= link_to "Sign In", new_podcast_session_path %></li>
+            <li><%= link_to "Create Podcast", new_podcast_registration_path %></li>
+          <% else %>
+            <li><%= link_to "Edit Profile", edit_podcast_registration_path %></li>
+            <li><%= link_to "Sign Out", destroy_podcast_session_path, method: :delete %></li>
+          <% end %>
+
         </ul>
       </nav>
     </div>
