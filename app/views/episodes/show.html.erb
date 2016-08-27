@@ -33,7 +33,7 @@
       <img src="https://static.pexels.com/photos/9635/suit-portrait-preparation-wedding.jpg" class="current_episode_thumbnail">
       <h2><%= @episode.title %></h2>
       <p class="description">
-              <%= @episode.description %>
+        <%= @episode.description %>
       </p>
 
     </div>
@@ -42,50 +42,22 @@
   <div id="episodes">
     <div class="wrapper_skinny">
       <ul class="cf">
-        <li class="cf">
-          <div class="episode_thumbnail">
-            <a href="">
-              <img src="https://static.pexels.com/photos/9635/suit-portrait-preparation-wedding.jpg">
-            </a>
-          </div>
-          <div class="episode_overview">
-            <h2><a href="#">How to pull off 12</a></h2>
-            <p class="description">
-              It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem...
+        <% @episodes.each do |episode| %>
+          <li class="cf">
+            <div class="episode_thumbnail">
+              <a href="">
+                <img src="https://static.pexels.com/photos/9635/suit-portrait-preparation-wedding.jpg">
+              </a>
+            </div>
+            <div class="episode_overview">
+              <h2><%= link_to episode.title, podcast_episode_path(@podcast, episode) %></h2>
+              <p class="description">
+                <%= episode.description %>
 
-            </p>
-          </div>
-        </li>
-
-        <li class="cf">
-          <div class="episode_thumbnail">
-            <a href="">
-              <img src="https://static.pexels.com/photos/6471/woman-hand-smartphone-desk.jpg">
-            </a>
-          </div>
-          <div class="episode_overview">
-            <h2><a href="#">How to pull off 12</a></h2>
-            <p class="description">
-              It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem...
-
-            </p>
-          </div>
-        </li>
-
-        <li class="cf">
-          <div class="episode_thumbnail">
-            <a href="">
-              <img src="https://static.pexels.com/photos/7075/people-office-group-team.jpg">
-            </a>
-          </div>
-          <div class="episode_overview">
-            <h2><a href="#">How to pull off 12</a></h2>
-            <p class="description">
-              It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem...
-
-            </p>
-          </div>
-        </li>
+              </p>
+            </div>
+          </li>
+        <% end %>
 
       </ul>
     </div>

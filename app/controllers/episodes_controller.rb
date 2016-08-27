@@ -16,6 +16,7 @@ class EpisodesController < ApplicationController
   end
 
   def show
+    @episodes = Episode.where(podcast_id: @podcast)
   end
 
   private
