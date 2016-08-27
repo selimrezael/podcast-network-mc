@@ -20,13 +20,12 @@
   </div>
 
   <div id="breadcrumb">
-    <a href="#">
-      All Podcasts
-      <span>/</span>
-      The Rocketship Podcast
-      <span>/</span>
-      <%= @episode.title %>
-    </a>
+    <%= link_to "All Podcasts", podcasts_path %>
+    <span>/</span>
+    <%= link_to @podcast.title, podcast_path(@podcast) %>
+    <span>/</span>
+    <%= @episode.title %>
+
   </div>
 
   <div id="episode_content">
