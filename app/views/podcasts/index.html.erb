@@ -6,50 +6,18 @@
 
 <div id="podcasts" class="cf">
   <div class="wrapper">
-    <ul><a href="#">
+    <ul>
+      <% @podcasts.each do |podcast| %>
+        <%= link_to podcast do %>
           <li>
             <img src= "http://placehold.it/250x150" >
             <div class="podcast_overview">
-              <h2>Elsewhere Podcast</h2>
+              <h2><%= podcast.title %></h2>
               <p class="episode_count">2 Episodes</p>
             </div>
           </li>
-        </a>
-        <a href="#">
-          <li>
-            <img src= "http://placehold.it/250x150" >
-            <div class="podcast_overview">
-              <h2>Narwhal Podcast</h2>
-              <p class="episode_count">1 Episodes</p>
-            </div>
-          </li>
-        </a>
-        <a href="#">
-          <li>
-            <img src= "http://placehold.it/250x150" >
-            <div class="podcast_overview">
-              <h2>Corman Podcast</h2>
-              <p class="episode_count">3 Episodes</p>
-            </div>
-          </li>
-        </a>
-        <a href="#">
-          <li>
-            <img src= "http://placehold.it/250x150" >
-            <div class="podcast_overview">
-              <h2>Google Podcast</h2>
-              <p class="episode_count">1 Episodes</p>
-            </div>
-          </li>
-        </a>
-        <a href="#">
-          <li>
-            <img src= "http://placehold.it/250x150" >
-            <div class="podcast_overview">
-              <h2>Google Podcast</h2>
-              <p class="episode_count">1 Episodes</p>
-            </div>
-          </li>
+          <% end %>
+        <% end %>
         </a>
     </ul>
   </div>

@@ -3,13 +3,20 @@
 <div id="podcast_show">
   <div id="show_banner">
     <div class="wrapper_skinny">
-      <h1>The Rocketship Podcast</h1>
+      <h1><%= @podcast.title %></h1>
       <p class="description">
-        Members of the subculture typically do not self-identify as hipsters, and the word hipster is often used as a pejorative to describe someone who is pretentious, overly trendy or effete.
+        <%= @podcast.description.truncate(175) %>
       </p>
-      <a href="#" class="subscribe_link">iTunes</a>
-      <a href="#" class="subscribe_link">Stitcher</a>
-      <a href="#" class="subscribe_link">Podbay</a>
+      <% unless @podcast.itunes.blank? %>
+        <a href="<%= @podcast.itunes %>" class="subscribe_link">iTunes</a>
+      <% end %>
+      <% unless @podcast.stitcher.blank? %>
+        <a href="<%= @podcast.stitcher %>" class="subscribe_link">Stitcher</a>
+      <% end %>
+      <% unless @podcast.podbay.blank? %>
+        <a href="<%= @podcast.podbay %>" class="subscribe_link">Podbay</a>
+      <% end %>
+
     </div>
   </div>
 

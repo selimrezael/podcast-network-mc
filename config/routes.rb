@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :podcasts
-  resources :podcasts
+  resources :podcasts, only: [:index, :show]
 
   authenticated do
     root 'podcasts#index'
