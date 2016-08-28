@@ -1,7 +1,6 @@
 class PodcastsController < ApplicationController
-  before_action :find_podcast, only: [:show, :dashboard, :edit]
+  before_action :find_podcast, only: [:show, :dashboard]
   before_action :find_episodes, only: [:show, :dashboard]
-  before_action :find_episode, only: [:edit]
 
   def index
     @podcasts = Podcast.all.order("created_at DESC")
@@ -30,7 +29,4 @@ class PodcastsController < ApplicationController
     @episodes = Episode.where(podcast_id: @podcast).order("created_at DESC")
   end
 
-  def find_episode
-    @episode = Episode.find(params [:episode_id])
-  end
 end
