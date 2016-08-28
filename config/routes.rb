@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
 
   authenticated do
-    root 'podcasts#index'
+    root 'podcasts#dashboard', as: "authenticated_root"
   end
 
   unauthenticated do

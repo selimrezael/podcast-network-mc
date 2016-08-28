@@ -1,28 +1,20 @@
-<%= render 'shared/header_dashboard' %>
+<%= render 'shared/header_podcast' %>
 <div id="podcast_show">
   <div id="show_banner">
     <div class="wrapper_skinny">
-      <h1><%= @podcast.title %></h1>
-      <p class="description">
-        <%= @podcast.description.truncate(175) %>
-      </p>
-      <% unless @podcast.itunes.blank? %>
-        <a href="<%= @podcast.itunes %>" class="subscribe_link">iTunes</a>
-      <% end %>
-      <% unless @podcast.stitcher.blank? %>
-        <a href="<%= @podcast.stitcher %>" class="subscribe_link">Stitcher</a>
-      <% end %>
-      <% unless @podcast.podbay.blank? %>
-        <a href="<%= @podcast.podbay %>" class="subscribe_link">Podbay</a>
-      <% end %>
-
+      <h1><%= @podcast.title %> Dashboard</h1>
     </div>
   </div>
 
-  <div id="breadcrumb">
-    <%= link_to "All Podcasts", podcasts_path %>
-    <span>/</span>
-    <%= @podcast.title %>
+  <div id="links">
+    <div class="wrapper_skinny">
+      <ul>
+        <li class="current">Episodes</li>
+        <li><%= link_to "New Episode", new_podcast_episode_path(@podcast) %></li>
+        <li><%= link_to "Account Settings", edit_podcast_registration_path %></li>
+        <li><%= link_to "View Podcast", podcast_path(current_podcast) %></li>
+      </ul>
+    </div>
   </div>
 
   <div id="episodes">
@@ -40,13 +32,20 @@
             <p class="description">
               <%= episode.description %>
             </p>
+            <div class="authorized_links">
+              <%= link_to "Edit", edit_podcast_episode_path(@podcast, episode) %>
+              <%= link_to "Delete", podcast_episode_path(@podcast, episode), method: :delete, data: { confirm: "Are you sure?" } %>
+            </div>
           </div>
         </li>
         <% end %>
       </ul>
     </div>
   </div>
+
+
 </div>
+
 
 <div class="pagination">
   <span class="previous_page disabled">Previous</span>
@@ -54,3 +53,5 @@
   <a href="#">2</a>
   <a href="#" class="next_page">Next</a>
 </div>
+
+

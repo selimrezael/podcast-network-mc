@@ -1,10 +1,13 @@
 <%= form_for ([@podcast, @episode]) do |f| %>
-  <%= f.label :title %> <br>
-  <%= f.text_field :title, autofocus: true %> <br><br>
+  <div class="field">
+    <%= f.label :title %> <br>
+    <%= f.text_field :title, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :description %> <br>
+    <%= f.text_field :description %>
+  </div>
 
-  <%= f.label :description %> <br>
-  <%= f.text_field :description %> <br><br>
-
-  <%= f.submit %>
+  <%= f.submit class: "button button_highlight button_block" %>
 
 <% end %>

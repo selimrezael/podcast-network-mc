@@ -1,8 +1,19 @@
 <%= render 'shared/header_dashboard' %>
+<div id="podcast_show">
 <div id="banner" class="edit_podcast_banner">
   <h1>Edit Podcast. All the best!</h1>
 </div>
 <%#= resource_name.to_s.humanize %>
+<div id="links">
+  <div class="wrapper_skinny">
+    <ul>
+      <li><%= link_to "Episodes", root_path %></li>
+      <li><%= link_to "New Episode", new_podcast_episode_path(@podcast) %></li>
+      <li><%= link_to "Account Settings", edit_podcast_registration_path, class: "current" %></li>
+      <li><%= link_to "View Podcast", podcast_path(current_podcast) %></li>
+    </ul>
+  </div>
+</div>
 
 <div id="form">
   <div class="wrapper_skinny">
@@ -75,4 +86,5 @@
     <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
   </div>
+</div>
 </div>

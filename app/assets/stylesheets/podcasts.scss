@@ -127,10 +127,22 @@ box-shadow: 0 1px 1px 0 rgba(0,0,0,0.25);
           .description {
             color: lighten($dark, 25%);
           }
+          .authorized_links {
+            font-weight: 700;
+            font-size: .8rem;
+            a {
+              color: $highlight;
+              margin-right: 1rem;
+              &:hover {
+                color: $dark;
+              }
+            }
+          }
         }
       }
     }
   }
+
   #episode_content {
     padding: 4rem 0;
     margin-bottom: 4rem;
@@ -155,6 +167,32 @@ box-shadow: 0 1px 1px 0 rgba(0,0,0,0.25);
       line-height: 1.75;
       margin: 0 auto 2rem auto;
       color: lighten($dark, 20%);
+    }
+  }
+
+  #links {
+    padding: 2rem 0;
+    ul {
+      list-style: none;
+      padding-left: 0;
+      padding: 1rem 0;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid lighten($dark, 75%);
+      li {
+        display: inline;
+        margin-right: 1rem;
+        font-weight: 700;
+        a {
+          color: $dark;
+          text-decoration: none;
+          &:hover {
+            color: $highlight;
+          }
+        }
+      }
+      .current {
+          color: $highlight;
+        }
     }
   }
 }
