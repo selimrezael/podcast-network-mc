@@ -19,7 +19,7 @@ class EpisodesController < ApplicationController
   end
 
   def show
-    @episodes = Episode.where(podcast_id: @podcast)
+    @episodes = Episode.where(podcast_id: @podcast).limit(3).reject { |e| e.id == @episode.id }
   end
 
   def edit
